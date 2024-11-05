@@ -179,10 +179,10 @@ class CalDAVClient {
       $headers = preg_split('/\r?\n/', $headers);
 
       // DAV header(s)
-      $dav_header = preg_grep('/^DAV:/', $headers);
+      $dav_header = preg_grep('/^DAV:/i', $headers);
       if (is_array($dav_header)) {
           $dav_header = array_values($dav_header);
-          $dav_header = preg_replace('/^DAV: /', '', $dav_header);
+          $dav_header = preg_replace('/^DAV: /i', '', $dav_header);
 
           $dav_options = array();
 
